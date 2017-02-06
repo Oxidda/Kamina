@@ -1,0 +1,17 @@
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\bin\ARM\Release\PlannerBotRunTime.Commands.dll
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\bin\ARM\Release\PlannerBotRunTime.Commands.pdb
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\bin\ARM\Release\PlannerBotRunTime.Commands.pri
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\PlannerBotRunTime.Commands.csprojResolveAssemblyReference.cache
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\PlannerBotRunTime.Commands.dll
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\PlannerBotRunTime.Commands.pdb
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\priconfig.xml
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\priconfig.xml.intermediate
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\layout.resfiles
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\layout.resfiles.intermediate
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\resources.resfiles
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\resources.resfiles.intermediate
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\pri.resfiles
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\pri.resfiles.intermediate
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\qualifiers.txt
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\qualifiers.txt.intermediate
+C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime.Commands\obj\ARM\Release\MultipleQualifiersPerDimensionFound.txt

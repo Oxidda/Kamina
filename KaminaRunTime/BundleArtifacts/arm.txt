@@ -1,0 +1,2 @@
+MainPackage=C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime\bin\ARM\Debug\Kamina_1.0.12.0_ARM_Debug.appx
+SymbolPackage=C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime\AppPackages\Kamina_1.0.12.0_Debug_Test\Kamina_1.0.12.0_ARM_Debug.appxsym

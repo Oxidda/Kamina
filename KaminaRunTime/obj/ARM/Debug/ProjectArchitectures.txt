@@ -1,0 +1,2 @@
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\Kamina.Commands.csproj;arm
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Kamina.csproj;arm
