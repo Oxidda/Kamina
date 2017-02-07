@@ -36,6 +36,10 @@ namespace Kamina.Commands
             {
                 word = word.Replace("ĳ", "ij");
             }
+            if (word.Contains("ï"))
+            {
+                word = word.Replace("ï", "i");
+            }
             return word;
         }
 

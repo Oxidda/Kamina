@@ -57,9 +57,9 @@ namespace Kamina
             
             string token = "<>";
 
-#if DEBUG
-            token = "<>;
-#endif
+//#if DEBUG
+//            token = "<>";
+//#endif
 
             await InstallCommands();
 
