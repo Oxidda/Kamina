@@ -55,10 +55,10 @@ namespace Kamina
                 MessageCacheSize = 5000,
             });
             
-            string token = "<token>";
+            string token = "<>";
 
 #if DEBUG
-            token = "Mjc4MjI0NjA3NDM2MzQxMjQ4.C3pMbg.s3pWiofTkJUhaIqAeNreDexReq8";
+            token = "<>;
 #endif
 
             await InstallCommands();
