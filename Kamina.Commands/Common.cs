@@ -18,6 +18,7 @@ namespace Kamina.Commands
         }
 
         [Command("info")]
+        
         public async Task Info()
         {
             try
@@ -80,15 +81,7 @@ namespace Kamina.Commands
 
             await ReplyAsync("", false, builder.Build());
         }
-
-
-
-        //[Command("I believe in you!")]
-        //public async Task Believe()
-        //{
-        //    await ReplyAsync($"{Context.User.Mention} I BELIEVEI IN YOU TOOOOO");
-        //}
-
+        
         private static string GetHeapSize()
             => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString(CultureInfo.InvariantCulture);
         private CommandService service;

@@ -58,7 +58,7 @@ namespace Kamina
             string token = "<token>";
 
 #if DEBUG
-            token = "<I use this for a second instance, to debug, with different token>";
+            token = "Mjc4MjI0NjA3NDM2MzQxMjQ4.C3pMbg.s3pWiofTkJUhaIqAeNreDexReq8";
 #endif
 
             await InstallCommands();

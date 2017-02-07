@@ -8,21 +8,21 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
-    <PackageIdentityName>0E424F03-3CB3-4988-B23B-B030213B5451</PackageIdentityName>
+    <PackageIdentityName>C4403569-DCDD-455B-A340-CE31296BEAF7</PackageIdentityName>
     <PackageIdentityPublisher>CN=MSFT</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\obj\ARM\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\bin\ARM\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\bin\ARM\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\bin\ARM\Debug\Kamina.winmd">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\bin\ARM\Debug\Kamina.winmd">
       <PackagePath>Kamina.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jasper\.nuget\packages\Discord.Net.Commands\1.0.0-rc-00588\lib\netstandard1.3\Discord.Net.Commands.dll">
@@ -391,43 +391,43 @@
     <AppxPackagedFile Include="C:\Users\Jasper\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\bin\ARM\Debug\Kamina.Commands.dll">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Debug\Kamina.Commands.dll">
       <PackagePath>Kamina.Commands.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\KaminaRunTime\bin\ARM\Debug\Core\UWPShim.exe">
+    <AppxPackagedFile Include="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\bin\ARM\Debug\Core\UWPShim.exe">
       <PackagePath>UWPShim.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

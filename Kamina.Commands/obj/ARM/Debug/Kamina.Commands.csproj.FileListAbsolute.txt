@@ -32,3 +32,20 @@ C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Debug\qualifiers.txt
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Debug\qualifiers.txt.intermediate
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Debug\Kamina.Commands.dll
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Debug\Kamina.Commands.pdb
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Debug\Kamina.Commands.pri
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\Kamina.Commands.dll
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\Kamina.Commands.pdb
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\priconfig.xml
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\priconfig.xml.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\layout.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\layout.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\resources.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\resources.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\pri.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\pri.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\qualifiers.txt
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\qualifiers.txt.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Debug\Kamina.Commands.csprojResolveAssemblyReference.cache
