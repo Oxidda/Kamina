@@ -24136,10 +24136,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
+      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
       "projectName": "Kamina.Commands",
-      "projectPath": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\Kamina.Commands\\project.json",
+      "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\project.json",
       "outputType": "UAP"
     },
     "dependencies": {

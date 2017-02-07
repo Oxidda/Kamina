@@ -36,7 +36,7 @@ namespace Kamina.Commands
             {
                 await ReplyAsync($"{this.Context.User.Mention} I love you too!");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

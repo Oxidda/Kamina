@@ -24197,16 +24197,16 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\KaminaRunTime\\Kamina.csproj",
+      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\Kamina.csproj",
       "projectName": "Kamina",
-      "projectPath": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\KaminaRunTime\\Kamina.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\KaminaRunTime\\project.json",
+      "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\Kamina.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\project.json",
       "outputType": "UAP",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj": {
-              "projectPath": "C:\\Users\\Jasper\\Documents\\Visual Studio 2017\\Projects\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj"
+            "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj"
             }
           }
         }

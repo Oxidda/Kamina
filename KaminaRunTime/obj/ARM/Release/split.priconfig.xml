@@ -6,7 +6,7 @@
     <autoResourcePackage qualifier="DXFeatureLevel" />
     <omitSchemaFromResourcePacks />
   </packaging>
-  <index root="\" startIndexAt="C:\Users\Jasper\documents\visual studio 2017\Projects\PlannerBot\PlannerBotRunTime\bin\ARM\Release\resources.pri">
+  <index root="\" startIndexAt="C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\bin\ARM\Release\resources.pri">
     <default>
       <qualifier name="Language" value="en-US" />
       <qualifier name="Contrast" value="standard" />

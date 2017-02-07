@@ -30,3 +30,19 @@ C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Release\qualifiers.txt
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Release\qualifiers.txt.intermediate
 C:\Users\Jasper\Documents\Visual Studio 2017\Projects\Kamina\Kamina.Commands\obj\ARM\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Release\Kamina.Commands.dll
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Release\Kamina.Commands.pdb
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\bin\ARM\Release\Kamina.Commands.pri
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\Kamina.Commands.dll
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\Kamina.Commands.pdb
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\priconfig.xml
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\priconfig.xml.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\layout.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\layout.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\resources.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\resources.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\pri.resfiles
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\pri.resfiles.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\qualifiers.txt
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\qualifiers.txt.intermediate
+C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\obj\ARM\Release\MultipleQualifiersPerDimensionFound.txt
