@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Kamina.Common;
 using Kamina.Contracts;
 
 namespace Kamina.DataAccess
@@ -7,7 +8,16 @@ namespace Kamina.DataAccess
     {
         public List<string> GetWords()
         {
-            throw new System.NotImplementedException();
+            var words = new List<string>();
+
+            using (var reader = new FileReader().GetFileReader("Ned.txt"))
+            {
+                while(!reader.EndOfStream)
+                {
+                    words.Add(reader.ReadLine());
+                }
+                return words;
+            }
         }
     }
 }

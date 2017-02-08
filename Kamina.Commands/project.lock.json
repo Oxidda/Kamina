@@ -2449,6 +2449,14 @@
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -4952,6 +4960,14 @@
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -7498,6 +7514,14 @@
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
@@ -10010,6 +10034,14 @@
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -12565,6 +12597,14 @@
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
@@ -15077,6 +15117,14 @@
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -17630,6 +17678,14 @@
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Discord.Net": "1.0.0-rc-00588",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -24176,6 +24232,11 @@
       "type": "project",
       "path": "../Kamina.Common/project.json",
       "msbuildProject": "../Kamina.Common/Kamina.Common.csproj"
+    },
+    "Kamina.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Kamina.Contracts/project.json",
+      "msbuildProject": "../Kamina.Contracts/Kamina.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24200,6 +24261,9 @@
           "projectReferences": {
             "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj": {
               "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj"
+            },
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj"
             }
           }
         }

@@ -5,8 +5,12 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Discord.Audio;
+using Kamina.Common;
 using Kamina.Common.Logging;
+using Kamina.Contracts;
+using Kamina.DataAccess;
 using Kamina.Logic;
+using Kamina.Logic.Games;
 
 namespace Kamina
 {
@@ -52,10 +56,15 @@ namespace Kamina
             {
                 AudioMode = AudioMode.Disabled,
                 DefaultRetryMode = RetryMode.RetryRatelimit,
-                MessageCacheSize = 5000,
+                MessageCacheSize = 10000,
             });
-            
+
             string token = "";
+
+            using (var reader = new FileReader().GetFileReader("token.txt"))
+            {
+                token = reader.ReadToEnd();
+            }
 
             await InstallCommands();
 
@@ -67,7 +76,10 @@ namespace Kamina
         
         private async Task InstallCommands()
         {
-            var map = new DependencyMap();
+            map = new DependencyMap();
+            map.Add<IWordsDataAccess>(new WordsDataAccess());
+            map.Add<IHangmanState>(new HangmanState(map.Get<IWordsDataAccess>()));
+            map.Add<IHangmanLogic>(new HangmanLogic(client , map.Get<IHangmanState>()));
             map.Add(client);
 
             handler = new CommandHandler();
