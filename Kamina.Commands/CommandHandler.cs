@@ -4,10 +4,9 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
-using Kamina.Commands.Logging;
+using Kamina.Common.Logging;
 
-
-namespace Kamina.Commands
+namespace Kamina.Logic
 {
     public class CommandHandler
     {
@@ -29,7 +28,7 @@ namespace Kamina.Commands
 
                 //                client.Disconnected += Client_Disconnected;
 
-                await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Commands")));
+                await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
 
                 help = "help: ";
                 foreach (var c in commands.Commands)

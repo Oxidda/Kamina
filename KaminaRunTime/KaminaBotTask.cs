@@ -5,8 +5,8 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Discord.Audio;
-using Kamina.Commands;
-using Kamina.Commands.Logging;
+using Kamina.Common.Logging;
+using Kamina.Logic;
 
 namespace Kamina
 {
@@ -55,11 +55,7 @@ namespace Kamina
                 MessageCacheSize = 5000,
             });
             
-            string token = "<>";
-
-//#if DEBUG
-//            token = "<>";
-//#endif
+            string token = "";
 
             await InstallCommands();
 

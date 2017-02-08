@@ -132,9 +132,21 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kamina.Commands\Kamina.Commands.csproj">
+    <ProjectReference Include="..\Kamina.Commands\Kamina.Logic.csproj">
       <Project>{6d731a8c-d2da-46a7-9c27-cdb6271e097d}</Project>
-      <Name>Kamina.Commands</Name>
+      <Name>Kamina.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kamina.Common\Kamina.Common.csproj">
+      <Project>{310e1974-4f63-4f0d-8278-b7184632cd84}</Project>
+      <Name>Kamina.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kamina.Contracts\Kamina.Contracts.csproj">
+      <Project>{365fc42d-ca8f-4621-a820-63bdbb550a67}</Project>
+      <Name>Kamina.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Kamina.DataAccess\Kamina.DataAccess.csproj">
+      <Project>{6c15d223-482c-46cd-b6e8-be213a06e5ea}</Project>
+      <Name>Kamina.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

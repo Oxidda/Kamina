@@ -1,0 +1,17 @@
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\bin\ARM\Debug\Kamina.Common.dll
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\bin\ARM\Debug\Kamina.Common.pdb
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\bin\ARM\Debug\Kamina.Common.pri
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\Kamina.Common.dll
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\Kamina.Common.pdb
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\priconfig.xml
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\priconfig.xml.intermediate
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\layout.resfiles
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\layout.resfiles.intermediate
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\resources.resfiles
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\resources.resfiles.intermediate
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\pri.resfiles
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\pri.resfiles.intermediate
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\qualifiers.txt
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\qualifiers.txt.intermediate
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\obj\ARM\Debug\Kamina.Common.csprojResolveAssemblyReference.cache

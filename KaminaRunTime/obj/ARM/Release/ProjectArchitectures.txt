@@ -1,2 +1,8 @@
-C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\Kamina.Commands.csproj;arm
-C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Kamina.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\Kamina.Logic.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\Kamina.Common.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\Kamina.Common.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\Kamina.Common.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\Kamina.Contracts.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\Kamina.Contracts.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.DataAccess\Kamina.DataAccess.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\KaminaRunTime\Kamina.csproj;arm

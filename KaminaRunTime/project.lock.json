@@ -2443,11 +2443,35 @@
           }
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -4949,11 +4973,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -7494,11 +7542,35 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -10009,11 +10081,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -12563,11 +12659,35 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -15078,11 +15198,35 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -17632,11 +17776,35 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Commands/1.0.0": {
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Contracts/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Kamina.Common": "1.0.0",
+          "Kamina.Contracts": "1.0.0",
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
+      },
+      "Kamina.Logic/1.0.0": {
         "type": "project",
         "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.0-rc-00588",
+          "Kamina.Common": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
@@ -24179,10 +24347,25 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "Kamina.Commands/1.0.0": {
+    "Kamina.Common/1.0.0": {
+      "type": "project",
+      "path": "../Kamina.Common/project.json",
+      "msbuildProject": "../Kamina.Common/Kamina.Common.csproj"
+    },
+    "Kamina.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Kamina.Contracts/project.json",
+      "msbuildProject": "../Kamina.Contracts/Kamina.Contracts.csproj"
+    },
+    "Kamina.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../Kamina.DataAccess/project.json",
+      "msbuildProject": "../Kamina.DataAccess/Kamina.DataAccess.csproj"
+    },
+    "Kamina.Logic/1.0.0": {
       "type": "project",
       "path": "../Kamina.Commands/project.json",
-      "msbuildProject": "../Kamina.Commands/Kamina.Commands.csproj"
+      "msbuildProject": "../Kamina.Commands/Kamina.Logic.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24197,16 +24380,25 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\Kamina.csproj",
+      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\KaminaRunTime\\Kamina.csproj",
       "projectName": "Kamina",
-      "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\Kamina.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\KaminaRunTime\\project.json",
+      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\KaminaRunTime\\Kamina.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\KaminaRunTime\\project.json",
       "outputType": "UAP",
       "frameworks": {
         "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj": {
-              "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj"
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Commands\\Kamina.Logic.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Commands\\Kamina.Logic.csproj"
+            },
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj"
+            },
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj"
+            },
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\Kamina.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\Kamina.DataAccess.csproj"
             }
           }
         }

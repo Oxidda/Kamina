@@ -28,8 +28,8 @@
       <qualifier name="AlternateForm" value="" />
       <qualifier name="Platform" value="UAP" />
     </default>
-    <indexer-config type="RESW" convertDotsToSlashes="true" initialPath="Kamina.Commands" />
-    <indexer-config type="RESJSON" initialPath="Kamina.Commands" />
+    <indexer-config type="RESW" convertDotsToSlashes="true" initialPath="Kamina.Logic" />
+    <indexer-config type="RESJSON" initialPath="Kamina.Logic" />
     <indexer-config type="RESFILES" qualifierDelimiter="." />
   </index>
   <index root="\" startIndexAt="obj\ARM\Debug\pri.resfiles">

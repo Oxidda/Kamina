@@ -2442,6 +2442,13 @@
             "rid": "aot"
           }
         }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-arm": {
@@ -4939,6 +4946,13 @@
         },
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -7477,6 +7491,13 @@
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x64": {
@@ -9983,6 +10004,13 @@
         },
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -12530,6 +12558,13 @@
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
+        }
       }
     },
     "UAP,Version=v10.0/win10-x86": {
@@ -15036,6 +15071,13 @@
         },
         "runtime": {
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     },
@@ -17582,6 +17624,13 @@
         },
         "runtime": {
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Kamina.Common/1.0.0": {
+        "type": "project",
+        "framework": "UAP,Version=v10.0",
+        "dependencies": {
+          "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2"
         }
       }
     }
@@ -24122,6 +24171,11 @@
         "ref/xamarinwatchos10/_._",
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
+    },
+    "Kamina.Common/1.0.0": {
+      "type": "project",
+      "path": "../Kamina.Common/project.json",
+      "msbuildProject": "../Kamina.Common/Kamina.Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -24136,11 +24190,20 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
-      "projectName": "Kamina.Commands",
-      "projectPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\Kamina.Commands.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Documents\\Repos\\Kamina\\Kamina.Commands\\project.json",
-      "outputType": "UAP"
+      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Commands\\Kamina.Logic.csproj",
+      "projectName": "Kamina.Logic",
+      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Commands\\Kamina.Logic.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Commands\\project.json",
+      "outputType": "UAP",
+      "frameworks": {
+        "uap10.0": {
+          "projectReferences": {
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj"
+            }
+          }
+        }
+      }
     },
     "dependencies": {
       "Discord.Net": "1.0.0-rc-00588",
