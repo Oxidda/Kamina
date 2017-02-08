@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Kamina.Contracts
 {
     public interface IWordsDataAccess
     {
-        List<string> GetWords();
+        Task<List<string>> GetWordsAsync();
     }
 }

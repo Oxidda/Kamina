@@ -26,29 +26,14 @@ namespace Kamina.Logic
                 client.MessageReceived += HandleCommand;
                 client.Log += Client_Log;
 
-                //                client.Disconnected += Client_Disconnected;
-
-                await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
-
-                help = "help: ";
-                foreach (var c in commands.Commands)
-                {
-                    help += $"{c.Name}, ";
-                }
-
+               await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
             }
             catch (Exception ex)
             {
                 await Logger.Log($"Exception: {ex}");
             }
         }
-
-        //private Task Client_Disconnected(Exception arg)
-        //{
-        //  if(client)
-
-        //}
-
+        
         public async Task HandleCommand(SocketMessage parameterMessage)
         {
             try
@@ -57,13 +42,10 @@ namespace Kamina.Logic
                 var message = parameterMessage as SocketUserMessage;
                 if (message == null) return;
 
-
                 char prefix = '>';
 #if DEBUG
                 prefix = '|';
 #endif
-
-
                 // Mark where the prefix ends and the command begins
                 int argPos = 0;
                 // Determine if the message has a valid prefix, adjust argPos 
@@ -97,11 +79,6 @@ namespace Kamina.Logic
             {
                 await Logger.Log($"Exception: {ex}");
             }
-        }
-
-        private bool HasHeyPrefix(SocketUserMessage message, int argPos)
-        {
-            return message.HasCharPrefix('>', ref argPos);
         }
 
         private Task Client_Log(LogMessage arg)

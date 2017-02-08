@@ -14,3 +14,4 @@ C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Debug\pri.resfiles
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Debug\qualifiers.txt
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Debug\qualifiers.txt.intermediate
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Debug\Kamina.Contracts.csprojResolveAssemblyReference.cache

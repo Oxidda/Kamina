@@ -71,7 +71,7 @@ namespace Kamina.Logic.Games
                         if (game.TargetWord.Contains(v))
                         {
                             game.CorrectGuessedLetters += v;
-                            if (IsCompleted(game))
+                            if (await IsCompleted(game))
                             {
                                 await Success(game,context);
                             }
@@ -110,31 +110,34 @@ namespace Kamina.Logic.Games
             await Stop(context);
         }
 
-        private string GetStringWordResponse(HangmanGame game)
+        private Task<string> GetStringWordResponse(HangmanGame game)
         {
-            var responseBuilder = new StringBuilder("`");
-            for (int i = 0; i < game.TargetWord.Length; i++)
-
+            return Task.Run(() =>
             {
-                bool isMatched = false;
-                for (int j = 0; j < game.CorrectGuessedLetters.Length; j++)
+                var responseBuilder = new StringBuilder("`");
+                for (int i = 0; i < game.TargetWord.Length; i++)
+
                 {
-                    if (game.TargetWord[i] == game.CorrectGuessedLetters[j])
+                    bool isMatched = false;
+                    for (int j = 0; j < game.CorrectGuessedLetters.Length; j++)
                     {
-                        responseBuilder.Append($"{game.CorrectGuessedLetters[j]} ");
-                        isMatched = true;
-                        break;
+                        if (game.TargetWord[i] == game.CorrectGuessedLetters[j])
+                        {
+                            responseBuilder.Append($"{game.CorrectGuessedLetters[j]} ");
+                            isMatched = true;
+                            break;
+                        }
+                    }
+
+                    if (!isMatched)
+                    {
+                        responseBuilder.Append("_ ");
                     }
                 }
-
-                if (!isMatched)
-                {
-                    responseBuilder.Append("_ ");
-                }
-            }
-            responseBuilder.Append("`");
-            var v = responseBuilder.ToString();
-            return v;
+                responseBuilder.Append("`");
+                var v = responseBuilder.ToString();
+                return v;
+            });
         }
 
         private async Task Success(HangmanGame game, CommandContext context)
@@ -143,28 +146,14 @@ namespace Kamina.Logic.Games
             await Stop(context);
         }
 
-        private bool IsCompleted(HangmanGame game)
+        private async Task<bool> IsCompleted(HangmanGame game)
         {
-            var result = GetStringWordResponse(game);
+            var result =  await GetStringWordResponse(game);
             return !result.Contains("_");
-        }
-
-        private StringBuilder GetStringWordResponse(string targetword)
-        {
-            var responseBuilder = new StringBuilder("`");
-            for (int i = 0; i < targetword.Length; i++)
-
-            {
-                responseBuilder.Append("_ ");
-            }
-            responseBuilder.Append("`");
-            return responseBuilder;
         }
 
         private async Task Stop(CommandContext context)
         {
-            client.MessageReceived -= Client_MessageReceived;
-
             await state.RemoveGameAsync(context.Guild.Id);
         }
 
@@ -176,8 +165,8 @@ namespace Kamina.Logic.Games
                 Description = "Game on"
             };
 
-            var hangman = GetHangman(game);
-            hangman += GetStringWordResponse(game) + "\n";
+            var hangman = await GetHangman(game);
+            hangman += await GetStringWordResponse(game) + "\n";
             hangman += answer + "\n";
 
             if (!string.IsNullOrEmpty(hangman))
@@ -203,78 +192,81 @@ namespace Kamina.Logic.Games
             await context.Channel.SendMessageAsync("", false, builder.Build());
         }
 
-        private string GetHangman(HangmanGame game)
+        private Task<string> GetHangman(HangmanGame game)
         {
-            var baseString = "" +
-             "//ccc3333333  \r\n" +
-             "//2 b      4  \r\n" +
-             "//2        5  \r\n" +
-             "//1       768 \r\n" +
-             "//1         9 \r\n" +
-             "//1a     g f  \r\n" +
-             "//1   a       \r\n" +
-             "//1      a    \r\n";
-
-            List<string> chars = new List<string> { "2", "c", "b", "3", "4", "5", "6", "7", "8", "9", "f", "g" };
-
-            if (game.Mistakes > 0)
+            return Task.Run(async() =>
             {
-                baseString = baseString.Replace('1', '|');
-                baseString = baseString.Replace('a', '\\');
-                if (game.Mistakes > 1)
+                var baseString = "" +
+                                 "//ccc3333333  \r\n" +
+                                 "//2 b      4  \r\n" +
+                                 "//2        5  \r\n" +
+                                 "//1       768 \r\n" +
+                                 "//1         9 \r\n" +
+                                 "//1a     g f  \r\n" +
+                                 "//1   a       \r\n" +
+                                 "//1      a    \r\n";
+
+                List<string> chars = new List<string> {"2", "c", "b", "3", "4", "5", "6", "7", "8", "9", "f", "g"};
+
+                if (game.Mistakes > 0)
                 {
-                    baseString = baseString.Replace('2', '|');
-                    baseString = baseString.Replace('c', '-');
-                    baseString = baseString.Replace('b', '/');
-                    chars.Remove("2");
-                    chars.Remove("c");
-                    chars.Remove("b");
-
-                    if (game.Mistakes > 2)
+                    baseString = baseString.Replace('1', '|');
+                    baseString = baseString.Replace('a', '\\');
+                    if (game.Mistakes > 1)
                     {
-                        baseString = baseString.Replace('3', '-');
-                        chars.Remove("-");
-                        chars.Remove("3");
+                        baseString = baseString.Replace('2', '|');
+                        baseString = baseString.Replace('c', '-');
+                        baseString = baseString.Replace('b', '/');
+                        chars.Remove("2");
+                        chars.Remove("c");
+                        chars.Remove("b");
 
-                        if (game.Mistakes > 3)
+                        if (game.Mistakes > 2)
                         {
-                            baseString = baseString.Replace('4', '|');
-                            chars.Remove("4");
+                            baseString = baseString.Replace('3', '-');
+                            chars.Remove("-");
+                            chars.Remove("3");
 
-                            if (game.Mistakes > 4)
+                            if (game.Mistakes > 3)
                             {
-                                baseString = baseString.Replace('5', 'O');
-                                chars.Remove("5");
+                                baseString = baseString.Replace('4', '|');
+                                chars.Remove("4");
 
-                                if (game.Mistakes > 5)
+                                if (game.Mistakes > 4)
                                 {
-                                    baseString = baseString.Replace('6', '|');
-                                    chars.Remove("6");
+                                    baseString = baseString.Replace('5', 'O');
+                                    chars.Remove("5");
 
-                                    if (game.Mistakes > 6)
+                                    if (game.Mistakes > 5)
                                     {
-                                        baseString = baseString.Replace('7', '/');
-                                        chars.Remove("7");
+                                        baseString = baseString.Replace('6', '|');
+                                        chars.Remove("6");
 
-                                        if (game.Mistakes > 7)
+                                        if (game.Mistakes > 6)
                                         {
-                                            baseString = baseString.Replace('8', '\\');
-                                            chars.Remove("8");
+                                            baseString = baseString.Replace('7', '/');
+                                            chars.Remove("7");
 
-                                            if (game.Mistakes > 8)
+                                            if (game.Mistakes > 7)
                                             {
-                                                baseString = baseString.Replace('9', '|');
-                                                chars.Remove("9");
+                                                baseString = baseString.Replace('8', '\\');
+                                                chars.Remove("8");
 
-                                                if (game.Mistakes > 9)
+                                                if (game.Mistakes > 8)
                                                 {
-                                                    baseString = baseString.Replace('g', '/');
-                                                    chars.Remove("g");
+                                                    baseString = baseString.Replace('9', '|');
+                                                    chars.Remove("9");
 
-                                                    if (game.Mistakes == 10)
+                                                    if (game.Mistakes > 9)
                                                     {
-                                                        baseString = baseString.Replace('f', '\\');
-                                                        chars.Remove("f");
+                                                        baseString = baseString.Replace('g', '/');
+                                                        chars.Remove("g");
+
+                                                        if (game.Mistakes == 10)
+                                                        {
+                                                            baseString = baseString.Replace('f', '\\');
+                                                            chars.Remove("f");
+                                                        }
                                                     }
                                                 }
                                             }
@@ -285,24 +277,27 @@ namespace Kamina.Logic.Games
                         }
                     }
                 }
-            }
-            else
-            {
-                baseString = "";
-            }
+                else
+                {
+                    baseString = "";
+                }
 
-            baseString = RemoveCharsInArrayWithEmpty(baseString, chars);
-            return baseString;
+                baseString = await RemoveCharsInArrayWithEmpty(baseString, chars);
+                return baseString;
+            });
         }
 
-        private static string RemoveCharsInArrayWithEmpty(string baseString, List<string> chars)
+        private Task<string> RemoveCharsInArrayWithEmpty(string baseString, List<string> chars)
         {
-            foreach (var str in chars)
+            return Task.Run(() =>
             {
-                baseString = baseString.Replace(str, String.Empty);
-            }
+                foreach (var str in chars)
+                {
+                    baseString = baseString.Replace(str, String.Empty);
+                }
 
-            return baseString;
+                return baseString;
+            });
         }
 
         private DiscordSocketClient client;

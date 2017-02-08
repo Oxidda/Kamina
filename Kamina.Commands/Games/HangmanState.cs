@@ -12,7 +12,7 @@ namespace Kamina.Logic.Games
         public HangmanState(IWordsDataAccess dataAccess)
         {
             State = new ConcurrentDictionary<ulong, HangmanGame>();
-            words = dataAccess.GetWords();
+            dataAccess.GetWordsAsync().ContinueWith(x=> { words = x.Result; });
         }
         
         public string GetRandomWord()
@@ -73,7 +73,7 @@ namespace Kamina.Logic.Games
             });
         }
 
-        private readonly List<string> words;
+        private List<string> words;
         public ConcurrentDictionary<ulong, HangmanGame> State { get; set; }
         
     }

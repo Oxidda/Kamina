@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Kamina.Common;
 using Kamina.Contracts;
 
@@ -6,18 +7,21 @@ namespace Kamina.DataAccess
 {
     public sealed class WordsDataAccess : IWordsDataAccess
     {
-        public List<string> GetWords()
+        public Task<List<string>> GetWordsAsync()
         {
-            var words = new List<string>();
-
-            using (var reader = new FileReader().GetFileReader("Ned.txt"))
+            return Task.Run(() =>
             {
-                while(!reader.EndOfStream)
+                var words = new List<string>();
+
+                using (var reader = new FileReader().GetFileReader("Ned.txt"))
                 {
-                    words.Add(reader.ReadLine());
+                    while (!reader.EndOfStream)
+                    {
+                        words.Add(reader.ReadLine());
+                    }
                 }
                 return words;
-            }
+            });
         }
     }
 }
