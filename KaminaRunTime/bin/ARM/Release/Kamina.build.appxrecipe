@@ -8,7 +8,7 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Release|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
-    <PackageIdentityName>ca65fd4a-a207-43a2-9d90-aede157f8399</PackageIdentityName>
+    <PackageIdentityName>C4403569-DCDD-455B-A340-CE31296BEAF7</PackageIdentityName>
     <PackageIdentityPublisher>CN=MSFT</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\Jasper\Source\Repos\Kamina2\KaminaRunTime\obj\ARM\Release\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>

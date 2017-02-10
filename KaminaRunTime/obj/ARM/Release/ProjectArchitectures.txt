@@ -4,5 +4,6 @@ C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\Kamina.Common.csproj;arm
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Common\Kamina.Common.csproj;arm
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\Kamina.Contracts.csproj;arm
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\Kamina.Contracts.csproj;arm
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\Kamina.Contracts.csproj;arm
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.DataAccess\Kamina.DataAccess.csproj;arm
 C:\Users\Jasper\Source\Repos\Kamina2\KaminaRunTime\Kamina.csproj;arm

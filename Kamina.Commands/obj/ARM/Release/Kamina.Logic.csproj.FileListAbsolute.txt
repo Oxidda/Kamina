@@ -18,3 +18,6 @@ C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\obj\ARM\Release\pri.resfile
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\obj\ARM\Release\qualifiers.txt
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\obj\ARM\Release\qualifiers.txt.intermediate
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\obj\ARM\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\bin\ARM\Release\Kamina.Contracts.dll
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\bin\ARM\Release\Kamina.Contracts.pdb
+C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Commands\bin\ARM\Release\Kamina.Contracts.pri
