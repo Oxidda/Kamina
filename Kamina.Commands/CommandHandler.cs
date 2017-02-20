@@ -14,6 +14,7 @@ namespace Kamina.Logic
         private DiscordSocketClient client;
         private IDependencyMap map;
         private string help;
+
         public async Task Install(IDependencyMap _map)
         {
             try
@@ -26,14 +27,14 @@ namespace Kamina.Logic
                 client.MessageReceived += HandleCommand;
                 client.Log += Client_Log;
 
-               await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
+                await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
             }
             catch (Exception ex)
             {
                 await Logger.Log($"Exception: {ex}");
             }
         }
-        
+
         public async Task HandleCommand(SocketMessage parameterMessage)
         {
             try
@@ -43,37 +44,38 @@ namespace Kamina.Logic
                 if (message == null) return;
 
                 char prefix = '>';
-#if DEBUG
-                prefix = '|';
-#endif
+
                 // Mark where the prefix ends and the command begins
                 int argPos = 0;
-                // Determine if the message has a valid prefix, adjust argPos 
-                if (!(message.HasMentionPrefix(client.CurrentUser, ref argPos) || message.HasCharPrefix(prefix, ref argPos))) return;
 
-                // Create a Command Context
-                var context = new CommandContext(client, message);
-                // Execute the Command, store the result
-
-                //if (context.Message.Content.EndsWith("help"))
-                //{
-                //    await context.Channel.SendMessageAsync(help);
-                //}
-                //else
-                //{
-                if (message.Content.Contains("I believe in you!"))
+                if (message.Content.ToLower().Contains("5 euro") && !message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
                 {
-                    await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
+                    var context = new CommandContext(client, message);
+                    await context.Channel.SendMessageAsync($"{context.User.Mention} 5 euro? OP JE MUIL, GAUW!");
                 }
                 else
                 {
-                    var result = await commands.ExecuteAsync(context, argPos, map);
+                    var context = new CommandContext(client, message);
+                    // Determine if the message has a valid prefix, adjust argPos 
+                    if (
+                        !(message.HasMentionPrefix(client.CurrentUser, ref argPos) ||
+                          message.HasCharPrefix(prefix, ref argPos))) return;
 
-                    // If the command failed, notify the user
-                    if (!result.IsSuccess)
-                        await message.Channel.SendMessageAsync($"**Error:** {result.ErrorReason}");
+                    // Create a Command Context
+                    // Execute the Command, store the result
+                    if (message.Content.Contains("I believe in you!"))
+                    {
+                        await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
+                    }
+                    else
+                    {
+                        var result = await commands.ExecuteAsync(context, argPos, map);
+
+                        // If the command failed, notify the user
+                        if (!result.IsSuccess)
+                            await message.Channel.SendMessageAsync($"**Error:** {result.ErrorReason}");
+                    }
                 }
-                //}
             }
             catch (Exception ex)
             {

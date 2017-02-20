@@ -81,7 +81,30 @@ namespace Kamina.Logic.Commands
 
             await ReplyAsync("", false, builder.Build());
         }
-        
+
+        [Command("Say")]
+        public async Task Say(string message)
+        {
+            try
+            {
+                var application = await Context.Client.GetApplicationInfoAsync();
+
+                if (Context.Message.Author.Id == application.Owner.Id)
+                {
+                    //string message = Context.Message.Content;
+
+                    //message = message.Remove(0, 2);
+
+                    await ReplyAsync(message);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         private static string GetHeapSize()
             => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString(CultureInfo.InvariantCulture);
         private CommandService service;

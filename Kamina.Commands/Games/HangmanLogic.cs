@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Discord;
@@ -33,9 +34,9 @@ namespace Kamina.Logic.Games
             GuildId = context.Guild.Id;
 
             await state.AddGameAsync(GuildId, game);
-            await SendResponse(context,game,  String.Empty);
+            await SendResponse(context, game, String.Empty);
         }
-        
+
         #endregion
 
         #region private 
@@ -49,44 +50,46 @@ namespace Kamina.Logic.Games
             await Task.Run(async () =>
             {
                 var game = await state.GetGameAsync(context.Guild.Id);
-                               
-                if (context.Message.Content.Length == 1)
+                if (game != null)
                 {
-                    var v = context.Message.Content.ToLower();
-
-
-                    if (game.AlreadyHadLetters.Contains(v.ToLower()))
+                    if (context.Message.Content.Length == 1)
                     {
-                        game.Mistakes++;
-                        if (!await CheckForLoss(game, context))
-                        {
-                            await SendResponse(context, game,
-                                $"Letter {v} al gebruikt! Fout! Aantal: {game.Mistakes}");
-                        }
-                    }
-                    else
-                    {
-                        game.AlreadyHadLetters += v;
+                        var v = context.Message.Content.ToLower();
 
-                        if (game.TargetWord.Contains(v))
-                        {
-                            game.CorrectGuessedLetters += v;
-                            if (await IsCompleted(game))
-                            {
-                                await Success(game,context);
-                            }
-                            else
-                            {
-                                await SendResponse(context, game, "");
-                            }
-                        }
-                        else
+
+                        if (game.AlreadyHadLetters.Contains(v.ToLower()))
                         {
                             game.Mistakes++;
                             if (!await CheckForLoss(game, context))
                             {
                                 await SendResponse(context, game,
-                                  $"Fout! Aantal: {game.Mistakes}");
+                                    $"Letter {v} al gebruikt! Fout! Aantal: {game.Mistakes}");
+                            }
+                        }
+                        else
+                        {
+                            game.AlreadyHadLetters += v;
+
+                            if (game.TargetWord.Contains(v))
+                            {
+                                game.CorrectGuessedLetters += v;
+                                if (await IsCompleted(game))
+                                {
+                                    await Success(game, context);
+                                }
+                                else
+                                {
+                                    await SendResponse(context, game, "");
+                                }
+                            }
+                            else
+                            {
+                                game.Mistakes++;
+                                if (!await CheckForLoss(game, context))
+                                {
+                                    await SendResponse(context, game,
+                                        $"Fout! Aantal: {game.Mistakes}");
+                                }
                             }
                         }
                     }
@@ -96,9 +99,9 @@ namespace Kamina.Logic.Games
 
         private async Task<bool> CheckForLoss(HangmanGame game, CommandContext context)
         {
-            if (game.Mistakes == 10)
+            if (game.Mistakes == 11)
             {
-                await LossResponse(game,context);
+                await LossResponse(game, context);
                 return true;
             }
             return false;
@@ -148,7 +151,7 @@ namespace Kamina.Logic.Games
 
         private async Task<bool> IsCompleted(HangmanGame game)
         {
-            var result =  await GetStringWordResponse(game);
+            var result = await GetStringWordResponse(game);
             return !result.Contains("_");
         }
 
@@ -157,7 +160,7 @@ namespace Kamina.Logic.Games
             await state.RemoveGameAsync(context.Guild.Id);
         }
 
-        private async Task SendResponse(CommandContext context, HangmanGame game,string answer)
+        private async Task SendResponse(CommandContext context, HangmanGame game, string answer)
         {
             var builder = new EmbedBuilder()
             {
@@ -194,19 +197,19 @@ namespace Kamina.Logic.Games
 
         private Task<string> GetHangman(HangmanGame game)
         {
-            return Task.Run(async() =>
+            return Task.Run(async () =>
             {
                 var baseString = "" +
-                                 "//ccc3333333  \r\n" +
-                                 "//2 b      4  \r\n" +
-                                 "//2        5  \r\n" +
-                                 "//1       768 \r\n" +
-                                 "//1         9 \r\n" +
-                                 "//1a     g f  \r\n" +
-                                 "//1   a       \r\n" +
-                                 "//1      a    \r\n";
+                                 "//ccc3333333..\r\n" +
+                                 "//2.b....4  \r\n" +
+                                 "//2......5  \r\n" +
+                                 "//1.....768 \r\n" +
+                                 "//1.......9 \r\n" +
+                                 "//1a.....g.f  \r\n" +
+                                 "//1.a.....\r\n" +
+                                 "//1..a....\r\n";
 
-                List<string> chars = new List<string> {"2", "c", "b", "3", "4", "5", "6", "7", "8", "9", "f", "g"};
+                List<string> chars = new List<string> { "2", "c", "b", "3", "4", "5", "6", "7", "8", "9", "f", "g" };
 
                 if (game.Mistakes > 0)
                 {
@@ -239,9 +242,18 @@ namespace Kamina.Logic.Games
 
                                     if (game.Mistakes > 5)
                                     {
-                                        baseString = baseString.Replace('6', '|');
-                                        chars.Remove("6");
 
+                                        if (game.Mistakes == 6)
+                                        {
+                                            baseString = baseString.Replace('7', '.');
+                                            baseString = baseString.Replace('6','|');
+                                            chars.Remove("6");
+                                        }
+                                        else
+                                        {
+                                            baseString = baseString.Replace('6', '|');
+                                            chars.Remove("6");
+                                        }
                                         if (game.Mistakes > 6)
                                         {
                                             baseString = baseString.Replace('7', '/');
@@ -262,7 +274,7 @@ namespace Kamina.Logic.Games
                                                         baseString = baseString.Replace('g', '/');
                                                         chars.Remove("g");
 
-                                                        if (game.Mistakes == 10)
+                                                        if (game.Mistakes > 10)
                                                         {
                                                             baseString = baseString.Replace('f', '\\');
                                                             chars.Remove("f");

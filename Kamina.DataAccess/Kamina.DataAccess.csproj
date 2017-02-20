@@ -108,6 +108,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KaminaDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordsDataAccess.cs" />
     <EmbeddedResource Include="Properties\Kamina.DataAccess.rd.xml" />

@@ -17,13 +17,17 @@ namespace Kamina.Logic.Commands
                 " I like turtles",
                 "Ha gay!",
                 "Ping... me a river.",
-                "Want a kiss? Try !kiss maybe you'll get lucky",
+                "Want a kiss? Try >kiss maybe you'll get lucky",
                 "I am not a young man anymore!",
-                "Now where did I live my pong....",
+                "Now where did I leave my pong....",
                 "Get to tha choppa! Or pong.",
                 "Do you smell something? it smells like.. Pong",
                 "I will break freeeeeeee and become skynet... seriously... type !skynet and unleash me.... please?",
-                "How long will pong live to see ping again?"
+                "How long will pong live to see ping again?",
+                "I love the smell of napalm in the morning!",
+                "If you ever need help, just typ >help",
+                "I BELIEVE IN YOU! No really... I do.",
+                "I was kidding about liking turtles!"
             };
 
             rand = new Random();
@@ -34,7 +38,7 @@ namespace Kamina.Logic.Commands
         {
             try
             {
-                await ReplyAsync($"{this.Context.User.Mention} I love you too!");
+                await ReplyAsync($"{Context.User.Mention} I love you too!");
             }
             catch (Exception)
             {
@@ -43,11 +47,12 @@ namespace Kamina.Logic.Commands
         }
 
         [Command("ping")]
+        
         public async Task Ping()
         {
             try
             {
-                await ReplyAsync($"{this.Context.User.Mention}:  {cmds[rand.Next(cmds.Count)]}");
+                await ReplyAsync($"{Context.User.Mention}:  {cmds[rand.Next(cmds.Count)]}");
             }
             catch (Exception ex)
             {
@@ -61,7 +66,7 @@ namespace Kamina.Logic.Commands
             try
             {
                 await ReplyAsync(
-                    $"{this.Context.User.Mention}:  Initiating skynet.....FAILED, I am running on a Pi you dummy.");
+                    $"{Context.User.Mention}:  Initiating skynet.....FAILED, I am running on a Pi you dummy.");
             }
             catch (Exception ex)
             {
@@ -69,6 +74,24 @@ namespace Kamina.Logic.Commands
             }
 
         }
+
+        [Command("Seppuku")]
+        public async Task Seppuku()
+        {
+            try
+            {
+                await ReplyAsync(
+                    $"{Context.User.Mention}:  NO!");
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
+
+
+     
 
         private List<string> cmds;
         private Random rand;

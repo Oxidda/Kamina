@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kamina.Contracts", "Kamina.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kamina.Common", "Kamina.Common\Kamina.Common.csproj", "{310E1974-4F63-4F0D-8278-B7184632CD84}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4FD68A86-8415-456C-B733-D5FAA1BBF6FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kamina.Logic.Tests", "Kamina.Logic.Tests\Kamina.Logic.Tests.csproj", "{E71A5121-4AA4-477E-BCED-959309566974}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,8 +112,31 @@ Global
 		{310E1974-4F63-4F0D-8278-B7184632CD84}.Release|x64.Build.0 = Release|x64
 		{310E1974-4F63-4F0D-8278-B7184632CD84}.Release|x86.ActiveCfg = Release|x86
 		{310E1974-4F63-4F0D-8278-B7184632CD84}.Release|x86.Build.0 = Release|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|ARM.Build.0 = Debug|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|ARM.Deploy.0 = Debug|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x64.ActiveCfg = Debug|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x64.Build.0 = Debug|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x64.Deploy.0 = Debug|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x86.ActiveCfg = Debug|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x86.Build.0 = Debug|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Debug|x86.Deploy.0 = Debug|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|Any CPU.ActiveCfg = Release|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|ARM.ActiveCfg = Release|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|ARM.Build.0 = Release|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|ARM.Deploy.0 = Release|ARM
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x64.ActiveCfg = Release|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x64.Build.0 = Release|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x64.Deploy.0 = Release|x64
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x86.ActiveCfg = Release|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x86.Build.0 = Release|x86
+		{E71A5121-4AA4-477E-BCED-959309566974}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E71A5121-4AA4-477E-BCED-959309566974} = {4FD68A86-8415-456C-B733-D5FAA1BBF6FB}
 	EndGlobalSection
 EndGlobal

@@ -1,7 +1,6 @@
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\bin\ARM\Release\Kamina.Contracts.dll
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\bin\ARM\Release\Kamina.Contracts.pdb
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\bin\ARM\Release\Kamina.Contracts.pri
-C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Release\Kamina.Contracts.csprojResolveAssemblyReference.cache
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Release\Kamina.Contracts.dll
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Release\Kamina.Contracts.pdb
 C:\Users\Jasper\Source\Repos\Kamina2\Kamina.Contracts\obj\ARM\Release\priconfig.xml
