@@ -1,2 +1,0 @@
-C:\Users\Jasper\Documents\Repos\Kamina\Kamina.Commands\Kamina.Commands.csproj;arm
-C:\Users\Jasper\Documents\Repos\Kamina\KaminaRunTime\Kamina.csproj;arm
