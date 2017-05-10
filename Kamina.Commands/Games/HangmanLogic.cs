@@ -6,6 +6,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Contracts;
+using Kamina.Contracts.Logic;
 using Kamina.Contracts.Objects;
 
 namespace Kamina.Logic.Games
@@ -14,7 +15,7 @@ namespace Kamina.Logic.Games
     {
         #region ctor
 
-        public HangmanLogic(DiscordSocketClient client, IHangmanState state)
+        public HangmanLogic(DiscordShardedClient client, IHangmanState state)
         {
             this.client = client;
             this.client.MessageReceived += Client_MessageReceived;
@@ -311,7 +312,7 @@ namespace Kamina.Logic.Games
             });
         }
 
-        private DiscordSocketClient client;
+        private DiscordShardedClient client;
 
         private ulong GuildId { get; set; }
 

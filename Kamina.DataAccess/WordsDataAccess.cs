@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Kamina.Common;
 using Kamina.Contracts;
+using Kamina.Contracts.Logic;
 
 namespace Kamina.DataAccess
 {

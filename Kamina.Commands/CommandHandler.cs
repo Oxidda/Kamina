@@ -11,7 +11,7 @@ namespace Kamina.Logic
     public class CommandHandler
     {
         private CommandService commands;
-        private DiscordSocketClient client;
+        private DiscordShardedClient client;
         private IDependencyMap map;
         private string help;
 
@@ -20,7 +20,7 @@ namespace Kamina.Logic
             try
             {
                 // Create Command Service, inject it into Dependency Map
-                client = _map.Get<DiscordSocketClient>();
+                client = _map.Get<DiscordShardedClient>();
                 commands = new CommandService();
                 _map.Add(commands);
                 map = _map;

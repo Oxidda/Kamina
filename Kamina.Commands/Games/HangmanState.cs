@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Kamina.Contracts;
+using Kamina.Contracts.Logic;
 using Kamina.Contracts.Objects;
 
 namespace Kamina.Logic.Games

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Kamina.Contracts
+namespace Kamina.Contracts.Logic
 {
     public interface IWordsDataAccess
     {

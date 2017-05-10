@@ -26,7 +26,7 @@ namespace Kamina.Logic.Commands
                 var time = DateTime.Now - Logger.StartTime;
 
                 var application = await Context.Client.GetApplicationInfoAsync();
-                var discordSocketClient = Context.Client as DiscordSocketClient;
+                var discordSocketClient = Context.Client as DiscordShardedClient;
                 if (discordSocketClient != null)
                     await ReplyAsync(
                         $"{Format.Bold("Info")}\n" +

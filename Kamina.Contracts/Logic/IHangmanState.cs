@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Kamina.Contracts.Objects;
 
-namespace Kamina.Contracts
+namespace Kamina.Contracts.Logic
 {
     public interface IHangmanState
     {

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:iot="http://schemas.microsoft.com/appx/manifest/iot/windows10" IgnorableNamespaces="uap mp iot">
-  <Identity Name="Kamina" Publisher="CN=MSFT" Version="1.0.14.0" />
+  <Identity Name="Kamina" Publisher="CN=MSFT" Version="1.0.15.0" />
   <!--<mp:PhoneIdentity PhoneProductId="ca65fd4a-a207-43a2-9d90-aede157f8399" PhonePublisherId="00000000-0000-0000-0000-000000000000" />-->
-  <mp:PhoneIdentity PhoneProductId="C4403569-DCDD-455B-A340-CE31296BEAF7" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <mp:PhoneIdentity PhoneProductId="D3AD94E6-847A-471E-A3AC-EF4C77548093" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Kamina</DisplayName>
     <PublisherDisplayName>MSFT</PublisherDisplayName>

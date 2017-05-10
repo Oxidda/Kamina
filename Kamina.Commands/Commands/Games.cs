@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Contracts;
+using Kamina.Contracts.Logic;
 using Kamina.Logic.Games;
 
 namespace Kamina.Logic.Commands
@@ -24,3 +25,4 @@ namespace Kamina.Logic.Commands
         private IHangmanLogic logic;
     }
 }
+

@@ -107,10 +107,15 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IHangmanLogic.cs" />
-    <Compile Include="IHangmanState.cs" />
-    <Compile Include="IWordsDataAccess.cs" />
+    <Compile Include="DataAccess\IKaminaDbContext.cs" />
+    <Compile Include="Logic\IHangmanLogic.cs" />
+    <Compile Include="Logic\IHangmanState.cs" />
+    <Compile Include="Logic\IPlanningLogic.cs" />
+    <Compile Include="Logic\IWordsDataAccess.cs" />
+    <Compile Include="Objects\CalenderItem.cs" />
+    <Compile Include="Objects\Guild.cs" />
     <Compile Include="Objects\HangmanGame.cs" />
+    <Compile Include="Objects\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Kamina.Contracts.rd.xml" />
   </ItemGroup>
