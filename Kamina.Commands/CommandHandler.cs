@@ -5,6 +5,8 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Common.Logging;
+using Kamina.Contracts.Logic;
+using Kamina.Logic.WordResponse;
 
 namespace Kamina.Logic
 {
@@ -13,6 +15,7 @@ namespace Kamina.Logic
         private CommandService commands;
         private DiscordShardedClient client;
         private IDependencyMap map;
+        private IWordResponseLogic wordResponseLogic;
         private string help;
 
         public async Task Install(IDependencyMap _map)
@@ -26,7 +29,7 @@ namespace Kamina.Logic
                 map = _map;
                 client.MessageReceived += HandleCommand;
                 client.Log += Client_Log;
-
+                wordResponseLogic = new WordResponseLogic();
                 await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
             }
             catch (Exception ex)
@@ -47,11 +50,20 @@ namespace Kamina.Logic
 
                 // Mark where the prefix ends and the command begins
                 int argPos = 0;
-
-                if (message.Content.ToLower().Contains("5 euro") && !message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
+                var textResponse = await wordResponseLogic.HandleText(message.Content.ToLower());
+                if (textResponse != null && !message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
                 {
-                    var context = new CommandContext(client, message);
-                    await context.Channel.SendMessageAsync($"{context.User.Mention} 5 euro? OP JE MUIL, GAUW!");
+                        var context = new CommandContext(client, message);
+
+                        string resultMsg = "";
+
+                        if (textResponse.ShouldMentionSender)
+                        {
+                            resultMsg = $"{context.User.Mention}: ";
+                        }
+
+                        resultMsg += $"{textResponse.Text}";
+                        await context.Channel.SendMessageAsync(resultMsg);
                 }
                 else
                 {

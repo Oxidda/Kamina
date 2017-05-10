@@ -76,6 +76,10 @@ namespace Kamina
             await client.LoginAsync(TokenType.Bot, token);
             await client.ConnectAsync();
 
+            //var application = await client.GetApplicationInfoAsync();
+            //client.
+            
+
             await Task.Delay(-1);
         }
         

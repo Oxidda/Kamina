@@ -116,6 +116,7 @@
     <Compile Include="Planning\PlanningLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\Smoochy.cs" />
+    <Compile Include="WordResponse\WordResponseLogic.cs" />
     <EmbeddedResource Include="Properties\Kamina.Commands.rd.xml" />
   </ItemGroup>
   <ItemGroup>

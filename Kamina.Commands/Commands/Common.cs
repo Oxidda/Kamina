@@ -10,7 +10,7 @@ using Kamina.Common.Logging;
 
 namespace Kamina.Logic.Commands
 {
-    public class CommonCommand : ModuleBase
+    public sealed class CommonCommand : ModuleBase
     {
         public CommonCommand(CommandService service)
         {

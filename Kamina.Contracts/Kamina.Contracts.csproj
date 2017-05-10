@@ -111,10 +111,12 @@
     <Compile Include="Logic\IHangmanLogic.cs" />
     <Compile Include="Logic\IHangmanState.cs" />
     <Compile Include="Logic\IPlanningLogic.cs" />
+    <Compile Include="Logic\IWordResponseLogic.cs" />
     <Compile Include="Logic\IWordsDataAccess.cs" />
     <Compile Include="Objects\CalenderItem.cs" />
     <Compile Include="Objects\Guild.cs" />
     <Compile Include="Objects\HangmanGame.cs" />
+    <Compile Include="Objects\TextResponse.cs" />
     <Compile Include="Objects\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Kamina.Contracts.rd.xml" />
