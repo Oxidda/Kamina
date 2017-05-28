@@ -49,46 +49,49 @@ namespace Kamina.Logic.Games
             var context = new CommandContext(client, message);
             await Task.Run(async () =>
             {
-                var game = await state.GetGameAsync(context.Guild.Id);
-                if (game != null)
+                if (context.Guild != null)
                 {
-                    if (context.Message.Content.Length == 1)
+                    var game = await state.GetGameAsync(context.Guild.Id);
+                    if (game != null)
                     {
-                        var v = context.Message.Content.ToLower();
-
-
-                        if (game.AlreadyHadLetters.Contains(v.ToLower()))
+                        if (context.Message.Content.Length == 1)
                         {
-                            game.Mistakes++;
-                            if (!await CheckForLoss(game, context))
-                            {
-                                await SendResponse(context, game,
-                                    $"Letter {v} al gebruikt! Fout! Aantal: {game.Mistakes}");
-                            }
-                        }
-                        else
-                        {
-                            game.AlreadyHadLetters += v;
+                            var v = context.Message.Content.ToLower();
 
-                            if (game.TargetWord.Contains(v))
-                            {
-                                game.CorrectGuessedLetters += v;
-                                if (await IsCompleted(game))
-                                {
-                                    await Success(game, context);
-                                }
-                                else
-                                {
-                                    await SendResponse(context, game, "");
-                                }
-                            }
-                            else
+
+                            if (game.AlreadyHadLetters.Contains(v.ToLower()))
                             {
                                 game.Mistakes++;
                                 if (!await CheckForLoss(game, context))
                                 {
                                     await SendResponse(context, game,
-                                        $"Fout! Aantal: {game.Mistakes}");
+                                        $"Letter {v} al gebruikt! Fout! Aantal: {game.Mistakes}");
+                                }
+                            }
+                            else
+                            {
+                                game.AlreadyHadLetters += v;
+
+                                if (game.TargetWord.Contains(v))
+                                {
+                                    game.CorrectGuessedLetters += v;
+                                    if (await IsCompleted(game))
+                                    {
+                                        await Success(game, context);
+                                    }
+                                    else
+                                    {
+                                        await SendResponse(context, game, "");
+                                    }
+                                }
+                                else
+                                {
+                                    game.Mistakes++;
+                                    if (!await CheckForLoss(game, context))
+                                    {
+                                        await SendResponse(context, game,
+                                            $"Fout! Aantal: {game.Mistakes}");
+                                    }
                                 }
                             }
                         }

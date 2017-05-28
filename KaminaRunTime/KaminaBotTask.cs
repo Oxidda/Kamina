@@ -49,7 +49,7 @@ namespace Kamina
             await Logger.Log("Task Cancelled");
             if (client.LoginState == LoginState.LoggedIn)
             {
-                client.LogoutAsync().RunSynchronously();
+                await client.LogoutAsync();
             }
         }
 

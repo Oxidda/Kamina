@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
+using Kamina.Common.Comparer;
 using Kamina.Common.Logging;
+using Kamina.Contracts.Common;
 
 namespace Kamina.Logic.Commands
 {
     public sealed class CommonCommand : ModuleBase
     {
-        public CommonCommand(CommandService service)
+        public CommonCommand(CommandService service, DiscordShardedClient client)
         {
-            this.service = service;
+            _service = service;
+            _client = client;
         }
 
         [Command("info")]
-        
+
         public async Task Info()
         {
             try
@@ -58,14 +61,16 @@ namespace Kamina.Logic.Commands
                 Description = "These are the commands you can use"
             };
 
-            foreach (var module in service.Modules)
+            foreach (var module in _service.Modules)
             {
                 string description = null;
-                foreach (var cmd in module.Commands)
+                foreach (var cmd in module.Commands.Distinct(new CommandInfoComparer()).ToList())
                 {
                     var result = await cmd.CheckPreconditionsAsync(Context);
                     if (result.IsSuccess)
+                    {
                         description += $"{prefix}{cmd.Aliases.First()}\n";
+                    }
                 }
 
                 if (!string.IsNullOrWhiteSpace(description))
@@ -91,11 +96,43 @@ namespace Kamina.Logic.Commands
 
                 if (Context.Message.Author.Id == application.Owner.Id)
                 {
-                    //string message = Context.Message.Content;
+                    await SayWithGuild(message, 0);
+                }
 
-                    //message = message.Remove(0, 2);
+            }
+            catch (Exception ex)
+            {
 
-                    await ReplyAsync(message);
+            }
+        }
+
+        [Command("Say")]
+        public async Task SayWithGuild(string message, ulong guildName)
+        {
+            try
+            {
+                var application = await Context.Client.GetApplicationInfoAsync();
+
+                if (Context.Message.Author.Id == application.Owner.Id)
+                {
+                    if (guildName == 0)
+                    {
+                        //string message = Context.Message.Content;
+
+                        //message = message.Remove(0, 2);
+
+                        await ReplyAsync(message);
+                    }
+                    else
+                    {
+                        //199851384944852992 && context.Channel?.Id != 283260580679385088
+                        var guild = _client.GetGuild(GuildId.DAGC);
+                        var channel = guild?.Channels.FirstOrDefault(x => x.Id == ChannelId.DAGCDankMemes) as SocketTextChannel;
+                        if (channel != null)
+                        {
+                            await channel.SendMessageAsync(message);
+                        }
+                    }
                 }
 
             }
@@ -107,7 +144,8 @@ namespace Kamina.Logic.Commands
 
         private static string GetHeapSize()
             => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString(CultureInfo.InvariantCulture);
-        private CommandService service;
+        private CommandService _service;
+        private readonly DiscordShardedClient _client;
     }
 }
 

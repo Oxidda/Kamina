@@ -1,11 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
+using System.ServiceModel.Channels;
+using System.Threading;
 using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Common.Logging;
+using Kamina.Contracts.Common;
 using Kamina.Contracts.Logic;
+using Kamina.Contracts.Objects;
+using Kamina.Logic.Message;
 using Kamina.Logic.WordResponse;
 
 namespace Kamina.Logic
@@ -49,43 +55,19 @@ namespace Kamina.Logic
                 char prefix = '>';
 
                 // Mark where the prefix ends and the command begins
-                int argPos = 0;
-                var textResponse = await wordResponseLogic.HandleText(message.Content.ToLower());
-                if (textResponse != null && !message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
+                var context = new CommandContext(client, message);
+                if (client.CurrentUser != null)
                 {
-                        var context = new CommandContext(client, message);
-
-                        string resultMsg = "";
-
-                        if (textResponse.ShouldMentionSender)
-                        {
-                            resultMsg = $"{context.User.Mention}: ";
-                        }
-
-                        resultMsg += $"{textResponse.Text}";
-                        await context.Channel.SendMessageAsync(resultMsg);
-                }
-                else
-                {
-                    var context = new CommandContext(client, message);
-                    // Determine if the message has a valid prefix, adjust argPos 
-                    if (
-                        !(message.HasMentionPrefix(client.CurrentUser, ref argPos) ||
-                          message.HasCharPrefix(prefix, ref argPos))) return;
-
-                    // Create a Command Context
-                    // Execute the Command, store the result
-                    if (message.Content.Contains("I believe in you!"))
+                    if (!message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
                     {
-                        await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
-                    }
-                    else
-                    {
-                        var result = await commands.ExecuteAsync(context, argPos, map);
-
-                        // If the command failed, notify the user
-                        if (!result.IsSuccess)
-                            await message.Channel.SendMessageAsync($"**Error:** {result.ErrorReason}");
+                      //  if (context.Guild != null)
+                      //  {
+                            await HandleMessageForGuild(context, message, prefix);
+                     //   }
+                        //else
+                        //{
+                        //    await HandleMessageForDm(context, message);
+                        //}
                     }
                 }
             }
@@ -93,6 +75,90 @@ namespace Kamina.Logic
             {
                 await Logger.Log($"Exception: {ex}");
             }
+        }
+
+        private async Task HandleMessageForDm(CommandContext context, SocketUserMessage message)
+        {
+            await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
+        }
+
+        private async Task HandleMessageForGuild(CommandContext context, SocketUserMessage message, char prefix)
+        {
+            // var defaultChanneld = context.Guild.DefaultChannelId;
+            if (await AllowedToRespond(context)) return;
+
+            int argPos = 0;
+            var textResponse = await wordResponseLogic.HandleText(message.Content.ToLower());
+            if (textResponse != null)
+            {
+                await HandleTextResponse(context, textResponse);
+            }
+            else
+            {
+                await HandleCommands(context, message, prefix, argPos);
+            }
+
+        }
+
+        private async Task HandleCommands(CommandContext context, SocketUserMessage message, char prefix, int argPos)
+        {
+            // Determine if the message has a valid prefix, adjust argPos 
+            if (
+                !(message.HasMentionPrefix(client.CurrentUser, ref argPos) ||
+                  message.HasCharPrefix(prefix, ref argPos))) return;
+
+            // Create a Command Context
+            // Execute the Command, store the result
+            if (message.Content.Contains("I believe in you!"))
+            {
+                await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
+            }
+            else
+            {
+                await commands.ExecuteAsync(context, argPos, map);
+
+                // If the command failed, notify the user
+#if debug
+                        if (!result.IsSuccess)
+                            await message.Channel.SendMessageAsync($"**Error:** {result.ErrorReason}");
+#endif
+            }
+        }
+
+        private async Task HandleTextResponse(CommandContext context, TextResponse textResponse)
+        {
+            string resultMsg = "";
+
+            if (textResponse.ShouldMentionSender)
+            {
+                resultMsg = $"{context.User.Mention}: ";
+            }
+
+            resultMsg += $"{textResponse.Text}";
+            var wordMsg = await context.Channel.SendMessageAsync(resultMsg);
+
+            await AttemptToDeleteWordMessage(wordMsg.Id, wordMsg.Channel.Id);
+        }
+
+        private Task AttemptToDeleteWordMessage(ulong wordMsgId, ulong channelId)
+        {
+            return Task.Run(() =>
+            {
+               var deleteMessageTimer = new DeleteMessageTimer(wordMsgId, channelId, client);
+            });
+        }
+
+        private Task<bool> AllowedToRespond(CommandContext context)
+        {
+            return Task.Run(() =>
+            {
+                //dankmemes id=283260580679385088
+                if (context.Guild?.Id == GuildId.DAGC && context.Channel?.Id != ChannelId.DAGCDankMemes) //DAGC
+                {
+                    return true;
+                }
+                return false;
+            });
         }
 
         private Task Client_Log(LogMessage arg)

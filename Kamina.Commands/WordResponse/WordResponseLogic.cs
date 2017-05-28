@@ -47,6 +47,13 @@ namespace Kamina.Logic.WordResponse
             words.TryAdd("vlucht", jaspertje);
             words.TryAdd("wegrennen", jaspertje);
 
+            var vechten = new TextResponse
+            {
+                ShouldMentionSender = true,
+                Text = "Kom jij met al je vrienden, dan kom ik ook alleen!"
+            };
+
+            words.TryAdd("vechten", vechten);
             words.TryAdd("cloth", new TextResponse
             {
                 ShouldMentionSender = true,

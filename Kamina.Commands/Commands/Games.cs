@@ -19,7 +19,10 @@ namespace Kamina.Logic.Commands
         [Command("galgje")]
         public async Task Galgje()
         {
-            await logic.Run(Context);
+            if (Context.Guild != null)
+            {
+                await logic.Run(Context);
+            }
         }
 
         private IHangmanLogic logic;

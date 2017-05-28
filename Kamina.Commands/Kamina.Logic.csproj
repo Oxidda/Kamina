@@ -113,6 +113,7 @@
     <Compile Include="Commands\Planning.cs" />
     <Compile Include="Games\HangmanLogic.cs" />
     <Compile Include="Games\HangmanState.cs" />
+    <Compile Include="Message\DeleteMessageTimer.cs" />
     <Compile Include="Planning\PlanningLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\Smoochy.cs" />
@@ -128,6 +129,9 @@
       <Project>{365fc42d-ca8f-4621-a820-63bdbb550a67}</Project>
       <Name>Kamina.Contracts</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PrivateMessage\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

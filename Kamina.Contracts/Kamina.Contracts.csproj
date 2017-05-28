@@ -107,6 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\ChannelId.cs" />
+    <Compile Include="Common\GuildId.cs" />
     <Compile Include="DataAccess\IKaminaDbContext.cs" />
     <Compile Include="Logic\IHangmanLogic.cs" />
     <Compile Include="Logic\IHangmanState.cs" />
@@ -114,6 +116,7 @@
     <Compile Include="Logic\IWordResponseLogic.cs" />
     <Compile Include="Logic\IWordsDataAccess.cs" />
     <Compile Include="Objects\CalenderItem.cs" />
+    <Compile Include="Objects\DeleteMessageTimerArgs.cs" />
     <Compile Include="Objects\Guild.cs" />
     <Compile Include="Objects\HangmanGame.cs" />
     <Compile Include="Objects\TextResponse.cs" />
