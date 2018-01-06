@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\ChannelId.cs" />
+    <Compile Include="Common\Language.cs" />
     <Compile Include="Common\GuildId.cs" />
     <Compile Include="DataAccess\IKaminaDbContext.cs" />
     <Compile Include="Logic\IHangmanLogic.cs" />

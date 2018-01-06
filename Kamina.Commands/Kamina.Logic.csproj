@@ -111,9 +111,12 @@
     <Compile Include="Commands\Common.cs" />
     <Compile Include="Commands\Games.cs" />
     <Compile Include="Commands\Planning.cs" />
+    <Compile Include="Commands\SimpleAudio.cs" />
     <Compile Include="Games\HangmanLogic.cs" />
     <Compile Include="Games\HangmanState.cs" />
+    <Compile Include="Message\BaseTimer.cs" />
     <Compile Include="Message\DeleteMessageTimer.cs" />
+    <Compile Include="Message\TimerQueue.cs" />
     <Compile Include="Planning\PlanningLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\Smoochy.cs" />

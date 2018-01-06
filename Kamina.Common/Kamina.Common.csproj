@@ -107,6 +107,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Channel\ChannelAllowedExtensions.cs" />
     <Compile Include="Comparer\CommandInfoComparer.cs" />
     <Compile Include="FileReader.cs" />
     <Compile Include="Logging\Logger.cs" />
@@ -117,6 +118,12 @@
     <Reference Include="Discord.Net.Commands">
       <HintPath>..\..\..\..\.nuget\packages\Discord.Net.Commands\1.0.0-rc-00588\lib\netstandard1.3\Discord.Net.Commands.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kamina.Contracts\Kamina.Contracts.csproj">
+      <Project>{365FC42D-CA8F-4621-A820-63BDBB550A67}</Project>
+      <Name>Kamina.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

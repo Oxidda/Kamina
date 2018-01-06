@@ -1,9 +1,14 @@
 ﻿using System;
+using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Discord;
+using Discord.Audio;
 using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Common.Comparer;
@@ -36,7 +41,7 @@ namespace Kamina.Logic.Commands
                         $"- Author: {application.Owner.Username} (ID {application.Owner.Id})\n" +
                         $"- Library: Discord.Net ({DiscordConfig.Version})\n" +
                         $"- Runtime: {RuntimeInformation.FrameworkDescription} {RuntimeInformation.OSArchitecture}\n" +
-                        $"-Uptime: {time}\n\n" +
+                        $"- Uptime: {time}\n\n" +
                         $"{Format.Bold("Stats")}\n" +
                         $"- Heap Size: {GetHeapSize()} MB\n" +
                         $"- Guilds: {discordSocketClient.Guilds.Count}\n" +
@@ -46,7 +51,7 @@ namespace Kamina.Logic.Commands
             }
             catch (Exception ex)
             {
-
+                await Logger.LogAsync($"Error getting info : {ex}");
             }
         }
 
@@ -102,7 +107,7 @@ namespace Kamina.Logic.Commands
             }
             catch (Exception ex)
             {
-
+                await Logger.LogAsync($"Error with command say : {ex}");
             }
         }
 
@@ -118,16 +123,14 @@ namespace Kamina.Logic.Commands
                     if (guildName == 0)
                     {
                         //string message = Context.Message.Content;
-
                         //message = message.Remove(0, 2);
-
                         await ReplyAsync(message);
                     }
                     else
                     {
                         //199851384944852992 && context.Channel?.Id != 283260580679385088
-                        var guild = _client.GetGuild(GuildId.DAGC);
-                        var channel = guild?.Channels.FirstOrDefault(x => x.Id == ChannelId.DAGCDankMemes) as SocketTextChannel;
+                        var guild = _client.GetGuild(GuildId.Dagc);
+                        var channel = guild?.Channels.FirstOrDefault(x => x.Id == ChannelId.DagcDankMemes) as SocketTextChannel;
                         if (channel != null)
                         {
                             await channel.SendMessageAsync(message);
@@ -138,7 +141,7 @@ namespace Kamina.Logic.Commands
             }
             catch (Exception ex)
             {
-
+                await Logger.LogAsync($"Error with command SayWithGuild : {ex}");
             }
         }
 

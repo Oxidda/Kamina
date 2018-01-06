@@ -12,40 +12,41 @@ namespace Kamina.Common.Logging
         static Logger()
         {
             StartTime = DateTime.Now;
-            isoStore = IsolatedStorageFile.GetUserStoreForApplication();
+            IsoStore = IsolatedStorageFile.GetUserStoreForApplication();
             TryGetFileName();
-            isoStream = new IsolatedStorageFileStream("Log.txt", FileMode.OpenOrCreate, isoStore);
-            writer = new StreamWriter(isoStream);
-            writer.AutoFlush = true;
+            var isoStream = new IsolatedStorageFileStream("Log.txt", FileMode.OpenOrCreate, IsoStore);
+            Writer = new StreamWriter(isoStream) { AutoFlush = true };
         }
 
         private static string TryGetFileName()
         {
-            var v = DateTime.Now.Ticks.ToString();
-            var s = $"Log{v}.txt";
-
-            if (isoStore.FileExists("Log.txt"))
+            string dateTimeAsString = DateTime.Now.Ticks.ToString();
+            string logLine = $"Log{dateTimeAsString}.txt";
+            if (IsoStore.FileExists("Log.txt"))
             {
-                if (!isoStore.FileExists(s))
+                if (!IsoStore.FileExists(logLine))
                 {
-                    isoStore.CopyFile("Log.txt", s);
+                    IsoStore.CopyFile("Log.txt", logLine);
                 }
                 else
                 {
                     return TryGetFileName();
                 }
             }
-
-            return s;
+            return logLine;
         }
 
-        public static async Task Log(string text)
+        public static async Task LogAsync(string text)
         {
-            await Task.Run(() => { writer.WriteLine(text); });
+            await Task.Run(() => { Log(text); });
         }
 
-        private static StreamWriter writer;
-        private static IsolatedStorageFileStream isoStream;
-        private static IsolatedStorageFile isoStore;
+        public static void Log(string text)
+        {
+            Writer.WriteLine(text);
+        }
+
+        private static readonly StreamWriter Writer;
+        private static readonly IsolatedStorageFile IsoStore;
     }
 }
