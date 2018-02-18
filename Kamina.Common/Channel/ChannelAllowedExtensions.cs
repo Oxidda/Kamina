@@ -9,31 +9,45 @@ namespace Kamina.Common.Channel
     {
         static ChannelAllowedExtensions()
         {
-            AllowedChannels = new List<ulong> { ChannelId.DagcTextGames, ChannelId.DagcDankMemes, ChannelId.DagcGeneralChat };
+            AllowedChannels = new List<ulong> { ChannelId.DagcTextGames, ChannelId.DagcDankMemes, ChannelId.DagcGeneralChat, ChannelId.DagcVoiceChat };
         }
 
         public static Task<bool> AllowedToRespond(this ICommandContext context)
         {
             return Task.Run(async () =>
             {
-                if (context.Guild?.Id == GuildId.Dagc)
+                if (context.IsInDagc())
                 {
                     return await ChannelAllowed(context.Channel?.Id);
                 }
-                else
-                {
-                    return true;
-                }
+                return true;
             });
+        }
+
+        public static bool IsInDagc(this ICommandContext context)
+        {
+            return context.Guild?.Id == GuildId.Dagc;
         }
 
         public static Task<bool> IsTextGames(this ICommandContext context)
         {
             return Task.Run(() =>
             {
-                if (context.Guild?.Id == GuildId.Dagc)
+                if (context.IsInDagc())
                 {
                     return context.Channel?.Id == ChannelId.DagcTextGames;
+                }
+                return true;
+            });
+        }
+
+        public static Task<bool> IsVoice(this ICommandContext context)
+        {
+            return Task.Run(() =>
+            {
+                if (context.IsInDagc())
+                {
+                    return context.Channel?.Id == ChannelId.DagcVoiceChat;
                 }
                 return true;
             });

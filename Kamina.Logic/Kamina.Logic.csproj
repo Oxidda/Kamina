@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5DBAA0A1-2A1B-4BAE-BD3A-55EFB967389A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Kamina.Console</RootNamespace>
-    <AssemblyName>Kamina.Console</AssemblyName>
+    <ProjectGuid>{A4225B8E-02AB-4894-8A4E-DFA420E3F294}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kamina.Logic</RootNamespace>
+    <AssemblyName>Kamina.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -158,12 +156,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Audio\AudioModule.cs" />
+    <Compile Include="Audio\AudioPlayerForGuild.cs" />
+    <Compile Include="Audio\AudioService.cs" />
+    <Compile Include="Audio\IAudoPlayback.cs" />
+    <Compile Include="CommandHandler.cs" />
+    <Compile Include="Commands\Common.cs" />
+    <Compile Include="Commands\Games.cs" />
+    <Compile Include="Commands\Planning.cs" />
+    <Compile Include="Commands\SimpleAudio.cs" />
+    <Compile Include="Commands\Smoochy.cs" />
+    <Compile Include="Games\HangmanLogic.cs" />
+    <Compile Include="Games\HangmanState.cs" />
+    <Compile Include="Message\BaseTimer.cs" />
+    <Compile Include="Message\DeleteMessageTimer.cs" />
+    <Compile Include="Message\TimerQueue.cs" />
+    <Compile Include="Planning\PlanningLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WordResponse\WordResponseLogic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PrivateMessage\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kamina.Common\Kamina.Common.csproj">
@@ -174,14 +190,26 @@
       <Project>{f52af8da-e0ce-4e23-8793-a9d5d841644f}</Project>
       <Name>Kamina.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kamina.DataAccess\Kamina.DataAccess.csproj">
-      <Project>{a5f78c30-5bee-4441-888d-800f22eb4b49}</Project>
-      <Name>Kamina.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kamina.Logic\Kamina.Logic.csproj">
-      <Project>{a4225b8e-02ab-4894-8a4e-dfa420e3f294}</Project>
-      <Name>Kamina.Logic</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AudioFiles\SOMEBODY TOUCHA MY SPAGHET.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AudioFiles\theway.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AudioFiles\Tutturuu.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AudioFiles\virgin.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AudioFiles\whitefoxlaughing.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AudioFiles\yolo.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Threading.Tasks;
-using Discord;
-using Discord.Audio;
+﻿using Discord;
 using Discord.WebSocket;
 using Kamina.Common;
 using Kamina.Common.Logging;
@@ -11,11 +7,17 @@ using Kamina.DataAccess;
 using Kamina.Logic;
 using Kamina.Logic.Games;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
+using Kamina.Logic.Audio;
 
 namespace Kamina.Console
 {
     class Program
     {
+        private static DiscordShardedClient _client;
+        private static IServiceCollection _map;
         static void Main(string[] args)
         {
             try
@@ -52,12 +54,14 @@ namespace Kamina.Console
                 MessageCacheSize = 10000,
                 TotalShards = 2
             });
-            
+
             string token;
             using (var reader = new FileReader().GetFileReader("token.txt"))
             {
                 token = reader.ReadToEnd();
             }
+
+
             IServiceProvider services = InstallCommands();
             await _client.LoginAsync(TokenType.Bot, token);
             await _client.StartAsync();
@@ -73,15 +77,11 @@ namespace Kamina.Console
             _map.AddSingleton<IHangmanState, HangmanState>();
             _map.AddSingleton<IHangmanLogic, HangmanLogic>();
             _map.AddSingleton(_client);
-            _map.AddSingleton(new Kamina.Logic2.Audio.AudioService());
+            _map.AddSingleton(new AudioService());
             _map.AddSingleton<CommandHandler>();
 
             var provider = new DefaultServiceProviderFactory().CreateServiceProvider(_map);
             return provider;
         }
-        
-        private static DiscordShardedClient _client;
-        private static IServiceCollection _map;
-
     }
 }

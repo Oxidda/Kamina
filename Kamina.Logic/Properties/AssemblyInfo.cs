@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Kamina.Contracts")]
+[assembly: AssemblyTitle("Kamina.Logic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Kamina.Contracts")]
+[assembly: AssemblyProduct("Kamina.Logic")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f52af8da-e0ce-4e23-8793-a9d5d841644f")]
+[assembly: Guid("a4225b8e-02ab-4894-8a4e-dfa420e3f294")]
 
 // Version information for an assembly consists of the following four values:
 //

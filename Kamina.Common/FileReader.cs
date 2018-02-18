@@ -7,9 +7,9 @@ namespace Kamina.Common
     {
         public StreamReader GetFileReader(string fileName)
         {
-            IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication();
-            IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(fileName, FileMode.OpenOrCreate, isoStore);
-            return new StreamReader(isoStream);
+            //IsolatedStorageFile isoStore = IsolatedStorageFile.GetUserStoreForApplication();
+           // IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(fileName, FileMode.OpenOrCreate, isoStore);
+            return new StreamReader(fileName);
         }
     }
 }

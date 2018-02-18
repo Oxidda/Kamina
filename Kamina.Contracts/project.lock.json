@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "UAP,Version=v10.0.10586": {
+    "UAP,Version=v10.0": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -2803,7 +2803,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm": {
+    "UAP,Version=v10.0/win10-arm": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -5608,7 +5608,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm-aot": {
+    "UAP,Version=v10.0/win10-arm-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -8449,7 +8449,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64": {
+    "UAP,Version=v10.0/win10-x64": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -11263,7 +11263,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64-aot": {
+    "UAP,Version=v10.0/win10-x64-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -14113,7 +14113,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86": {
+    "UAP,Version=v10.0/win10-x86": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -16927,7 +16927,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86-aot": {
+    "UAP,Version=v10.0/win10-x86-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -28777,19 +28777,19 @@
       "Microsoft.EntityFrameworkCore.Sqlite >= 1.1.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.3.2"
     ],
-    "UAP,Version=v10.0.10586": []
+    "UAP,Version=v10.0": []
   },
   "packageFolders": {
     "C:\\Users\\Jasper\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj",
-      "projectName": "Kamina.Contracts",
-      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\project.json",
+      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\Kamina.Contracts2.csproj",
+      "projectName": "Kamina.Contracts2",
+      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\Kamina.Contracts2.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\project.json",
       "packagesPath": "C:\\Users\\Jasper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\obj\\",
+      "outputPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Jasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28807,7 +28807,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
     },
     "frameworks": {
-      "uap10.0.10586": {}
+      "uap10.0": {}
     },
     "runtimes": {
       "win10-arm": {

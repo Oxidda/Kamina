@@ -12,7 +12,7 @@ namespace Kamina.Common.Logging
         static Logger()
         {
             StartTime = DateTime.Now;
-            IsoStore = IsolatedStorageFile.GetUserStoreForApplication();
+            IsoStore = IsolatedStorageFile.GetMachineStoreForAssembly();
             TryGetFileName();
             var isoStream = new IsolatedStorageFileStream("Log.txt", FileMode.OpenOrCreate, IsoStore);
             Writer = new StreamWriter(isoStream) { AutoFlush = true };

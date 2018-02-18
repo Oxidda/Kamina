@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "UAP,Version=v10.0.10586": {
+    "UAP,Version=v10.0": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -2943,18 +2943,18 @@
           }
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -2962,7 +2962,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm": {
+    "UAP,Version=v10.0/win10-arm": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -5907,18 +5907,18 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -5926,7 +5926,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-arm-aot": {
+    "UAP,Version=v10.0/win10-arm-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -8907,18 +8907,18 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -8926,7 +8926,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64": {
+    "UAP,Version=v10.0/win10-x64": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -11880,18 +11880,18 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -11899,7 +11899,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x64-aot": {
+    "UAP,Version=v10.0/win10-x64-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -14889,18 +14889,18 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -14908,7 +14908,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86": {
+    "UAP,Version=v10.0/win10-x86": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -17862,18 +17862,18 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -17881,7 +17881,7 @@
         }
       }
     },
-    "UAP,Version=v10.0.10586/win10-x86-aot": {
+    "UAP,Version=v10.0/win10-x86-aot": {
       "Discord.Net/1.0.2": {
         "type": "package",
         "dependencies": {
@@ -20871,18 +20871,18 @@
           "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Kamina.Common/1.0.0": {
+      "Kamina.Common2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
-          "Kamina.Contracts": "1.0.0",
+          "Kamina.Contracts2": "1.0.0",
           "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
         }
       },
-      "Kamina.Contracts/1.0.0": {
+      "Kamina.Contracts2/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.10586",
+        "framework": "UAP,Version=v10.0",
         "dependencies": {
           "Discord.Net": "1.0.2",
           "Microsoft.EntityFrameworkCore.Sqlite": "1.1.1",
@@ -30020,15 +30020,15 @@
         "runtimes/aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "Kamina.Common/1.0.0": {
+    "Kamina.Common2/1.0.0": {
       "type": "project",
-      "path": "../Kamina.Common/project.json",
-      "msbuildProject": "../Kamina.Common/Kamina.Common.csproj"
+      "path": "../Kamina.Common2/project.json",
+      "msbuildProject": "../Kamina.Common2/Kamina.Common2.csproj"
     },
-    "Kamina.Contracts/1.0.0": {
+    "Kamina.Contracts2/1.0.0": {
       "type": "project",
-      "path": "../Kamina.Contracts/project.json",
-      "msbuildProject": "../Kamina.Contracts/Kamina.Contracts.csproj"
+      "path": "../Kamina.Contracts2/project.json",
+      "msbuildProject": "../Kamina.Contracts2/Kamina.Contracts2.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -30038,19 +30038,19 @@
       "Microsoft.EntityFrameworkCore.Tools >= 1.1.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.3.2"
     ],
-    "UAP,Version=v10.0.10586": []
+    "UAP,Version=v10.0": []
   },
   "packageFolders": {
     "C:\\Users\\Jasper\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\Kamina.DataAccess.csproj",
-      "projectName": "Kamina.DataAccess",
-      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\Kamina.DataAccess.csproj",
-      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\project.json",
+      "projectUniqueName": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess2\\Kamina.DataAccess2.csproj",
+      "projectName": "Kamina.DataAccess2",
+      "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess2\\Kamina.DataAccess2.csproj",
+      "projectJsonPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess2\\project.json",
       "packagesPath": "C:\\Users\\Jasper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.DataAccess2\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Jasper\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -30062,13 +30062,13 @@
         "https://www.myget.org/F/discord-net/api/v3/index.json": {}
       },
       "frameworks": {
-        "uap10.0.10586": {
+        "uap10.0": {
           "projectReferences": {
-            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj": {
-              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common\\Kamina.Common.csproj"
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common2\\Kamina.Common2.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Common2\\Kamina.Common2.csproj"
             },
-            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj": {
-              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts\\Kamina.Contracts.csproj"
+            "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\Kamina.Contracts2.csproj": {
+              "projectPath": "C:\\Users\\Jasper\\Source\\Repos\\Kamina2\\Kamina.Contracts2\\Kamina.Contracts2.csproj"
             }
           }
         }
@@ -30081,7 +30081,7 @@
       "Microsoft.NETCore.UniversalWindowsPlatform": "5.3.2"
     },
     "frameworks": {
-      "uap10.0.10586": {}
+      "uap10.0": {}
     },
     "runtimes": {
       "win10-arm": {
