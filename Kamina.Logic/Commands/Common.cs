@@ -25,7 +25,7 @@ namespace Kamina.Logic.Commands
 
         [Command("info")]
 
-        public async Task Info()
+        public async Task InfoAsync()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Kamina.Logic.Commands
 
 
         [Command("help")]
-        public async Task Help()
+        public async Task HelpAsync()
         {
             string prefix = ">";
             var builder = new EmbedBuilder()
@@ -91,7 +91,7 @@ namespace Kamina.Logic.Commands
         }
 
         [Command("Say")]
-        public async Task Say(string message)
+        public async Task SayAsync(string message)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace Kamina.Logic.Commands
 
                 if (Context.Message.Author.Id == application.Owner.Id)
                 {
-                    await SayWithGuild(message, 0);
+                    await SayWithGuildAsync(message, 0);
                 }
 
             }
@@ -110,11 +110,11 @@ namespace Kamina.Logic.Commands
         }
 
         [Command("Say")]
-        public async Task SayWithGuild(string message, ulong guildName)
+        public async Task SayWithGuildAsync(string message, ulong guildName)
         {
             try
             {
-                var application = await Context.Client.GetApplicationInfoAsync();
+                IApplication application = await Context.Client.GetApplicationInfoAsync();
 
                 if (Context.Message.Author.Id == application.Owner.Id)
                 {
@@ -127,8 +127,8 @@ namespace Kamina.Logic.Commands
                     else
                     {
                         //199851384944852992 && context.Channel?.Id != 283260580679385088
-                        var guild = _client.GetGuild(GuildId.Dagc);
-                        var channel = guild?.Channels.FirstOrDefault(x => x.Id == ChannelId.DagcDankMemes) as SocketTextChannel;
+                        SocketGuild guild = _client.GetGuild(GuildId.Dagc);
+                        SocketTextChannel channel = guild?.Channels.FirstOrDefault(x => x.Id == ChannelId.DagcDankMemes) as SocketTextChannel;
                         if (channel != null)
                         {
                             await channel.SendMessageAsync(message);
@@ -140,6 +140,23 @@ namespace Kamina.Logic.Commands
             catch (Exception ex)
             {
                 await Logger.LogAsync($"Error with command SayWithGuild : {ex}");
+            }
+        }
+
+        [Command("Leave")]
+        public async Task LeaveAsync()
+        {
+            try
+            {
+                IApplication application = await Context.Client.GetApplicationInfoAsync();
+                if (Context.Message.Author.Id == application.Owner.Id)
+                {
+                    await Context.Guild.LeaveAsync(new RequestOptions());
+                }
+            }
+            catch (Exception ex)
+            {
+                await Logger.LogAsync($"Error with command LeaveAsync : {ex}");
             }
         }
 

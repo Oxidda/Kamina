@@ -164,7 +164,6 @@
     <Compile Include="Commands\Common.cs" />
     <Compile Include="Commands\Games.cs" />
     <Compile Include="Commands\Planning.cs" />
-    <Compile Include="Commands\SimpleAudio.cs" />
     <Compile Include="Commands\Smoochy.cs" />
     <Compile Include="Games\HangmanLogic.cs" />
     <Compile Include="Games\HangmanState.cs" />
@@ -192,6 +191,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AudioFiles\5euro.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="AudioFiles\SOMEBODY TOUCHA MY SPAGHET.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
