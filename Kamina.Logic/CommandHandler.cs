@@ -1,31 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Threading.Tasks;
-using Discord;
-using Discord.Commands;
+﻿using Discord.Commands;
 using Discord.WebSocket;
 using Kamina.Common.Channel;
 using Kamina.Common.Logging;
-using Kamina.Contracts.Common;
 using Kamina.Contracts.Logic;
 using Kamina.Contracts.Objects;
 using Kamina.Logic.Message;
 using Kamina.Logic.WordResponse;
 using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Reflection;
+using System.Threading.Tasks;
+using Kamina.Contracts.Common;
 
 namespace Kamina.Logic
 {
     public class CommandHandler
     {
+        private readonly DiscordShardedClient client;
+        private readonly CommandService commands;
+        private readonly IServiceProvider serviceProvider;
+        private IWordResponseLogic wordResponseLogic;
+        private readonly TimerQueue timerQueue;
+
         public CommandHandler(IServiceProvider serviceProvider)
         {
             try
             {
-                _commands = new CommandService();
-                _serviceProvider = serviceProvider;
-                _client = serviceProvider.GetService<DiscordShardedClient>();
-                _timerQueue = new TimerQueue();
+                commands = new CommandService();
+                this.serviceProvider = serviceProvider;
+                client = serviceProvider.GetService<DiscordShardedClient>();
+                timerQueue = new TimerQueue();
 
             }
             catch (Exception ex)
@@ -38,11 +42,13 @@ namespace Kamina.Logic
         {
             try
             {
-                _wordResponseLogic = new WordResponseLogic();
-                _client.MessageReceived += HandleCommand;
-                _client.Log += Client_Log;
+                wordResponseLogic = new WordResponseLogic();
+                client.MessageReceived += HandleCommand;
+                //client.Log += Client_Log;
 
-                await _commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
+                client.UserJoined += Client_UserJoined;
+
+                await commands.AddModulesAsync(Assembly.Load(new AssemblyName("Kamina.Logic")));
 
             }
             catch (Exception ex)
@@ -50,24 +56,23 @@ namespace Kamina.Logic
                 Logger.LogAsync($"Exception: {ex}").GetAwaiter().GetResult();
             }
         }
-
+        
         public async Task HandleCommand(SocketMessage parameterMessage)
         {
             try
             {
                 // Don't handle the command if it is a system message
-                var message = parameterMessage as SocketUserMessage;
-                if (message == null) return;
+                if (!(parameterMessage is SocketUserMessage message)) return;
 
                 char prefix = '>';
 
-            #if DEBUG
+#if DEBUG
                 prefix = '!';
-            #endif
+#endif
                 // Mark where the prefix ends and the command begins
-                var context = new CommandContext(_client, message);
-                if (_client.CurrentUser != null)
-                    if (!message.Author.IsBot && message.Author.Id != _client.CurrentUser.Id)
+                var context = new CommandContext(client, message);
+                if (client.CurrentUser != null)
+                    if (!message.Author.IsBot && message.Author.Id != client.CurrentUser.Id)
                         await HandleMessageForGuild(context, message, prefix);
             }
             catch (Exception ex)
@@ -76,20 +81,15 @@ namespace Kamina.Logic
             }
         }
 
-        //private async Task HandleMessageForDm(CommandContext context, SocketUserMessage message)
-        //{
-        //    await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
-        //}
-
         private async Task HandleMessageForGuild(CommandContext context, SocketUserMessage message, char prefix)
         {
             bool allowedToRespond = await context.AllowedToRespond();
             if (!allowedToRespond) return;
 
             var argPos = 0;
-            if (!HasPrefix(message, prefix,ref argPos))
+            if (!HasPrefix(message, prefix, ref argPos))
             {
-                var textResponse = await _wordResponseLogic.HandleText(message.Content.ToLower());
+                var textResponse = await wordResponseLogic.HandleText(message.Content.ToLower());
                 if (textResponse != null)
                     await HandleTextResponse(context, textResponse);
             }
@@ -99,19 +99,26 @@ namespace Kamina.Logic
             }
         }
 
+        private async Task Client_UserJoined(SocketGuildUser arg)
+        {
+            if (arg.Guild.Id == GuildId.Dagc)
+            {
+                if (client.GetChannel(ChannelId.DagcGeneralChat) is SocketTextChannel channel)
+                {
+                    await channel.SendMessageAsync($"Welkom {arg.Mention}!");
+                }
+            }
+        }
+
         private async Task HandleCommands(CommandContext context, SocketUserMessage message, int argPos)
         {
-            // Determine if the message has a valid prefix, adjust argPos 
-            // Create a Command Context
-            // Execute the Command, store the result
             if (message.Content.Contains("I believe in you!"))
             {
                 await context.Channel.SendMessageAsync($"{context.User.Mention} I BELIEVE IN YOU TOOOOO");
             }
             else
             {
-                await _commands.ExecuteAsync(context, argPos, _serviceProvider);
-                // If the command failed, notify the user
+                await commands.ExecuteAsync(context, argPos, serviceProvider);
 #if debug
                         if (!result.IsSuccess)
                             await message.Channel.SendMessageAsync($"**Error:** {result.ErrorReason}");
@@ -119,9 +126,9 @@ namespace Kamina.Logic
             }
         }
 
-        private bool HasPrefix(SocketUserMessage message, char prefix,ref int argPos)
+        private bool HasPrefix(SocketUserMessage message, char prefix, ref int argPos)
         {
-            return (message.HasMentionPrefix(_client.CurrentUser, ref argPos) || message.HasCharPrefix(prefix, ref argPos));
+            return (message.HasMentionPrefix(client.CurrentUser, ref argPos) || message.HasCharPrefix(prefix, ref argPos));
         }
 
         private async Task HandleTextResponse(CommandContext context, TextResponse textResponse)
@@ -141,30 +148,22 @@ namespace Kamina.Logic
         {
             return Task.Run(() =>
             {
-                _timerQueue.QueueNewDeleteTimer(wordMsgId, channelId, _client);
+                timerQueue.QueueNewDeleteTimer(wordMsgId, channelId, client);
             });
         }
 
-        private Task Client_Log(LogMessage arg)
-        {
-            try
-            {
-                return Logger.LogAsync($"Log event: {arg.Message} Exception: {arg.Exception} Source: {arg.Source}");
-            }
-            catch (Exception)
-            {
-                /*nop*/
-            }
+        //private Task Client_Log(LogMessage arg)
+        //{
+        //    try
+        //    {
+        //        return Logger.LogAsync($"Log event: {arg.Message} Exception: {arg.Exception} Source: {arg.Source}");
+        //    }
+        //    catch (Exception)
+        //    {
+        //        /*nop*/
+        //    }
 
-            return Task.Delay(1);
-        }
-
-
-        private readonly DiscordShardedClient _client;
-        private readonly CommandService _commands;
-        private readonly IServiceProvider _serviceProvider;
-        private IWordResponseLogic _wordResponseLogic;
-        private readonly TimerQueue _timerQueue;
-
+        //    return Task.Delay(1);
+        //}
     }
 }
