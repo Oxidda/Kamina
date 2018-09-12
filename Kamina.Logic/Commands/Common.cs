@@ -160,6 +160,30 @@ namespace Kamina.Logic.Commands
             }
         }
 
+        [Command("sarcasm")]
+        public async Task Sarcasm()
+        {
+            await SendSarcasm();
+        }
+
+        [Command("s")]
+        public async Task SarcasmS()
+        {
+            await SendSarcasm();
+        }
+
+        private async Task SendSarcasm()
+        {
+            try
+            {
+                await ReplyAsync("Wow grappig man, totaal niet sarcastisch ofzo! 10/10");
+            }
+            catch (Exception ex)
+            {
+                await Logger.LogAsync($"Error with command LeaveAsync : {ex}");
+            }
+        }
+
         private static string GetHeapSize()
             => Math.Round(GC.GetTotalMemory(true) / (1024.0 * 1024.0), 2).ToString(CultureInfo.InvariantCulture);
         private CommandService _service;

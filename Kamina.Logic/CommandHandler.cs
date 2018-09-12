@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
+using Discord;
 using Kamina.Contracts.Common;
 
 namespace Kamina.Logic
@@ -133,10 +134,18 @@ namespace Kamina.Logic
 
         private async Task HandleTextResponse(CommandContext context, TextResponse textResponse)
         {
-            var resultMsg = "";
+            string resultMsg = "";
 
             if (textResponse.ShouldMentionSender)
+            {
                 resultMsg = $"{context.User.Mention}: ";
+            }
+
+            if (textResponse.PersonToMention != 0)
+            {
+                IUser user =await context.Channel.GetUserAsync(textResponse.PersonToMention);
+                resultMsg = $"{user.Mention} " + resultMsg;
+            }
 
             resultMsg += $"{textResponse.Text}";
             var wordMsg = await context.Channel.SendMessageAsync(resultMsg);

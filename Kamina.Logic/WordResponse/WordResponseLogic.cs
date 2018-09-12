@@ -53,6 +53,27 @@ namespace Kamina.Logic.WordResponse
                 ShouldMentionSender = true,
                 Text = "Hoorde ik daar cloth? Kan je terugkopen op de auction."
             });
+
+            _words.TryAdd("spoon", new TextResponse
+            {
+                ShouldMentionSender = true,
+                PersonToMention = 172319870266900480,
+                Text = "IS GEEN LITTLE SPOON"
+            });
+
+            _words.TryAdd("lepeltje", new TextResponse
+            {
+                ShouldMentionSender = true,
+                PersonToMention = 172319870266900480,
+                Text = "IS GEEN LITTLE SPOON"
+            });
+
+            _words.TryAdd("lepel", new TextResponse
+            {
+                ShouldMentionSender = true,
+                PersonToMention = 172319870266900480,
+                Text = "IS GEEN LITTLE SPOON"
+            });
         }
 
         public async Task<TextResponse> HandleText(string text)

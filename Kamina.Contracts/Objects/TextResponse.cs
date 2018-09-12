@@ -5,5 +5,6 @@ namespace Kamina.Contracts.Objects
     {
         public string Text { get; set; }
         public bool ShouldMentionSender { get; set; }
+        public ulong PersonToMention { get; set; } = 0;
     }
 }

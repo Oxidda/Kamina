@@ -52,7 +52,6 @@ namespace Kamina.Console
                 DefaultRetryMode = RetryMode.RetryRatelimit,
                 MessageCacheSize = 10000,
                 TotalShards = 4,
-               // ShardId = 1
             });
 
             string token;
