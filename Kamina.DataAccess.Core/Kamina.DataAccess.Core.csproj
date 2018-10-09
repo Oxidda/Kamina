@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kamina.Common.Core\Kamina.Common.Core.csproj" />
+    <ProjectReference Include="..\Kamina.Contracts.Core\Kamina.Contracts.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Ned.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
